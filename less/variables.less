@@ -1,0 +1,63 @@
+// Colors
+@primary-color: hsl(4, 100%, 67%);
+
+@neutral-blue-800: hsl(234, 29%, 20%);
+@neutral-blue-700: hsl(235, 18%, 26%);
+@neutral-grey: hsl(0, 0%, 58%);
+@neutral-white: hsl(0, 0%, 100%);
+
+// Typography
+@font-family: "Roboto", sans-serif;
+@font-weight-regular: 400;
+@font-weight-bold: 700;
+
+@spacing-100: 0.5rem; // 8px
+@spacing-200: 1rem; // 16px
+@spacing-300: 1.5rem; // 24px
+@spacing-400: 2rem; // 32px
+@spacing-500: 2.5rem; // 40px
+@spacing-600: 3rem; // 48px
+@spacing-800: 4rem; // 64px
+@spacing-900: 4.5rem; // 72px
+@spacing-1300: 6.5rem; // 104px
+
+// Layout
+@mobile-width: 23.4375rem; // 375px
+@desktop-width: 90rem; // 1440px
+
+// Mixins
+.text-preset-1 {
+  font-family: @font-family;
+  font-weight: @font-weight-bold;
+  font-size: 2.5rem; // 40px
+  line-height: 100%;
+  letter-spacing: 0px;
+
+  @media (min-width: 48rem) {
+    font-size: 3.5rem;
+  }
+}
+
+.text-preset-2-regular {
+  font-family: @font-family;
+  font-weight: @font-weight-regular;
+  font-size: 1rem; // 16px
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+
+.text-preset-2-bold {
+  font-family: @font-family;
+  font-weight: @font-weight-bold;
+  font-size: 1rem; // 16px
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+
+.text-preset-3 {
+  font-family: @font-family;
+  font-weight: @font-weight-bold;
+  font-size: 0.75rem; // 12px
+  line-height: 150%;
+  letter-spacing: 0px;
+}

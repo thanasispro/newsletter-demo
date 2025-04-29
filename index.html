@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./less/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/validator@13.9.0/validator.min.js"></script>
+
+    <title>Newsletter Sign-up</title>
+  </head>
+  <body>
+    <main class="sign-up-form">
+      <picture class="sign-up-form__image-container">
+        <source media="(min-width: 64rem)" srcset="./assets/images/illustration-sign-up-desktop.svg">
+        <img
+          src="./assets/images/illustration-sign-up-mobile.svg"
+          alt="Illustration of people joining a newsletter"
+          class="sign-up-form__image"
+        />
+      </picture>
+
+      <article class="sign-up-form__content">
+        <h1 class="sign-up-form__title">Stay updated!</h1>
+        <p class="sign-up-form__description">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+        <ul class="sign-up-form__perks">
+          <li class="sign-up-form__perk">
+            Product discovery and building what matters
+          </li>
+          <li class="sign-up-form__perk">
+            Measuring to ensure updates are a success
+          </li>
+          <li class="sign-up-form__perk">And much more!</li>
+        </ul>
+
+        <form class="sign-up-form__form" id="form">
+          <div class="sign-up-form__form-group">
+            <div class="sign-up-form__label">
+              <label for="email">Email address</label>
+              <span
+                id="error-message"
+                class="sign-up-form__error-message"
+              ></span>
+            </div>
+            <input
+              type="email"
+              id="email"
+              placeholder="email@company.com"
+              class="sign-up-form__input"
+            />
+          </div>
+          <button id="subscribe" class="sign-up-form__button">
+            Subscribe to monthly newsletter
+          </button>
+        </form>
+      </article>
+    </main>
+
+    <script>
+      const form = document.getElementById("form");
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const emailInput = document.getElementById("email");
+          const email = emailInput.value;
+          const errorMessage = document.getElementById("error-message");
+
+          if (!validator.isEmail(email)) {
+            errorMessage.textContent = "Valid email required";
+            emailInput.classList.add("error");
+          } else {
+            errorMessage.textContent = "";
+            emailInput.classList.remove("error");
+            window.location.href = "success.html?email=" + encodeURIComponent(email);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

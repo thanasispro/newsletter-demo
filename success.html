@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./less/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Subscription Successful</title>
+  </head>
+  <body class="success">
+    <main class="success__content">
+      <img
+        class="success__icon"
+        src="./assets/images/icon-list.svg"
+        alt="Success Icon"
+      />
+      <h1 class="success__title">Thanks for subscribing!</h1>
+      <p class="success__description">
+        A confirmation email has been sent to
+        <span class="success__email" id="user-email"></span>. Please open it and
+        click the button inside to confirm your subscription.
+      </p>
+      <button class="success__button" id="dismiss">Dismiss message</button>
+    </main>
+
+    <script>
+      document.getElementById("dismiss").addEventListener("click", function () {
+        window.location.href = "index.html";
+      });
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const email = urlParams.get("email");
+
+      if (email) {
+        document.getElementById("user-email").textContent = email;
+      }
+    </script>
+  </body>
+</html>

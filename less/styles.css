@@ -97,7 +97,7 @@ main {
 }
 @media (min-width: 48rem) {
   .sign-up-form__image-container {
-    border-radius: 2.25rem;
+    border-radius: 1rem;
     height: 22.375rem;
   }
 }
@@ -112,11 +112,6 @@ main {
   width: 100%;
   transform-origin: center;
   object-fit: cover;
-}
-@media (min-width: 48rem) {
-  .sign-up-form__image {
-    border-radius: 0.5rem;
-  }
 }
 @media (min-width: 64rem) {
   .sign-up-form__image {
